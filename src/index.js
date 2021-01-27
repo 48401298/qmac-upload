@@ -128,7 +128,7 @@ class AcUpload extends Component {
             onChange: (msg) => {
                 if (msg.file.status == 'done') {
                     this.props.onSuccess && this.props.onSuccess(msg.file.response);
-                    if (this.props.autoClose || !this.props.multiple) {
+                    if ((this.props.multiple && this.props.autoClose) || !this.props.multiple) {
                         this.setState({
                             show: false
                         });
